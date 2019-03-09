@@ -24,25 +24,25 @@
 @endif
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link active show" data-toggle="tab" href="#profile">Profiel</a>
+        <a class="nav-link active show" data-toggle="tab" href="#profile">โปรไฟล์</a>
     </li>
     @can('edit.users')
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#users">Gebruikers</a>
+        <a class="nav-link" data-toggle="tab" href="#users">ผู้ใช้</a>
     </li>
     @endcan
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#password">Wachtwoord veranderen</a>
+        <a class="nav-link" data-toggle="tab" href="#password">เปลี่ยนรหัสผ่าน</a>
     </li>
 </ul>
 <div class="row mt-4">
     <div class="col">
         <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="profile">
-            <a href="{{ route('profile.update') }}" class="btn btn-success">Profiel aanpassen</a>
+            <a href="{{ route('profile.update') }}" class="btn btn-success">แก้ไขโปรไฟล์</a>
             <table class="table table-hover mt-4">
                 <tr>
-                    <th>Naam</th>
+                    <th>ชื่อ</th>
                     <td>{{ $user->name }}</td>
                 </tr>
 
@@ -52,21 +52,21 @@
                 </tr>
 
                 <tr>
-                    <th>Gebruikersnaam</th>
+                    <th>ชื่อผู้ใช้</th>
                     <td>{{ $user->username }}</td>
                 </tr>
             </table>
         </div>
         @can('edit.users')
         <div class="tab-pane fade" id="users">
-            <a href="{{ route('user.create') }}" class="btn btn-success">Gebruiker toevoegen</a>
+            <a href="{{ route('user.create') }}" class="btn btn-success">เพิ่มผู้ใช้</a>
             <table class="table table-hover mt-4">
                 <thead>
                 <tr>
-                    <th>Gebruikersnaam</th>
-                    <th>Naam</th>
+                    <th>Username</th>
+                    <th>Name</th>
                     <th>Email</th>
-                    <th>Rol</th>
+                    <th>สิทธิ์</th>
                     <th width="5%"></th>
                 </tr>
                 </thead>
@@ -108,19 +108,19 @@
                 {{ csrf_field() }}
 
                 <div class="form-group row">
-                    <label for="current-password" class="col-sm-3 offset-sm-2 col-form-label">Huidig wachtwoord</label>
+                    <label for="current-password" class="col-sm-3 offset-sm-2 col-form-label">รหัสผ่านปัจจุบัน</label>
                     <div class="col-sm-5">
                         <input id="current-password" type="password" class="form-control" name="current-password" required autofocus>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="new-password" class="col-sm-3 offset-sm-2 col-form-label">Nieuw wachtwoord</label>
+                    <label for="new-password" class="col-sm-3 offset-sm-2 col-form-label">รหัสใหม่</label>
                     <div class="col-sm-5">
                         <input id="new-password" type="password" class="form-control" name="new-password" required autofocus>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="new-password_confirmation" class="col-sm-3 offset-sm-2 col-form-label">Herhaal nieuw wachtwoord</label>
+                    <label for="new-password_confirmation" class="col-sm-3 offset-sm-2 col-form-label">ยื่นยันรหัสใหม่</label>
                     <div class="col-sm-5">
                         <input id="new-password_confirmation" type="password" class="form-control" name="new-password_confirmation" required autofocus>
                     </div>
@@ -128,7 +128,7 @@
                 <div class="form-group row">
                     <div class="col-md-5 offset-md-5">
                         <button type="submit" class="btn btn-primary">
-                            Aanpassen
+                            Save
                         </button>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nieuwe gast</h5>
+        <h5 class="modal-title" id="exampleModalLabel">New Guest</h5>
         <button class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -151,12 +151,12 @@
         <div class="row">
             <div class="col-sm">
                 <div class="form-group">
-                <label for="firstnameInput">Voornaam</label>
+                <label for="firstnameInput">ชื่อจริง</label>
                 <input class="form-control" name="firstname" id="firstnameInput"  autocomplete="off" type="text" required
                 @if(isset($guest)) value="{{ $guest->firstname }}" @endif>
                 </div>
                 <div class="form-group">
-                <label for="lastnameInput">Familienaam</label>
+                <label for="lastnameInput">นามสกุล</label>
                 <input class="form-control" name="lastname" id="lastnameInput"  autocomplete="off" type="text" required
                 @if(isset($guest)) value="{{ $guest->lastname }}" @endif>
                 </div>
@@ -186,7 +186,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-        <button class="btn btn-primary" id="saveGuest">Opslaan</button>
+        <button class="btn btn-primary" id="saveGuest">ร้านค้า</button>
       </div>
     </div>
   </div>

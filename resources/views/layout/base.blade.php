@@ -33,13 +33,13 @@
                         </li>
                         @can('edit.all')
                         <li class="nav-item @if (strstr('kamers', Request::path())) active @endif">
-                            <a class="nav-link" href="{{ route('rooms') }}">Kamers</a>
+                            <a class="nav-link" href="{{ route('rooms') }}">ห้อง</a>
                         </li>
                         <li class="nav-item @if (strstr('extras', Request::path())) active @endif">
                             <a class="nav-link" href="{{ route('extra') }}">Extra's</a>
                         </li>
                         <li class="nav-item @if (strstr('stats', Request::path())) active @endif">
-                            <a class="nav-link" href="{{ route('stats') }}">Statistieken</a>
+                            <a class="nav-link" href="{{ route('stats') }}">สถิติ</a>
                         </li>
                         @endcan
                         @can('access.admin')
