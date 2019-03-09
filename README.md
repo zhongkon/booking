@@ -1,6 +1,6 @@
 ## Laravel booking system
 
-> A backend room booking system built on Laravel 5.6.
+> A backend room booking system built on Laravel 5.8.
 
 ## Contributing
 
